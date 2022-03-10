@@ -1,16 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Pesquisa = () => {
+  const [ Form, setForm ] = useState({
+    Nome: '',
+    Email: '',
+    WhatsApp: ''
+  });
   const save = async () => {
-    const form = {
-      Nome: 'aaa',
-      Email: 'bbb',
-      WhatsApp: 'ccc'
-    }
     try {
       const response = await fetch('/api/save', {
         method: 'POST',
-        body: JSON.stringify(form)
+        body: JSON.stringify(Form)
       })
       const data = await response.json();
       console.log(data);
@@ -18,7 +18,16 @@ const Pesquisa = () => {
 
     }
   }
-
+  const onChange = evt => {
+    const value = evt.target.value
+    const key = evt.target.name
+    setForm(old => ({
+      ...old,
+      [key]: value,
+      [key]: value,
+      [key]: value
+    }))
+  }
   return (
     <>
       <main className="container flex flex-col justify-center items-center p-6">
@@ -31,13 +40,13 @@ const Pesquisa = () => {
         </p>
         <form className="w-1/5 mt-6">
           <label className="font-bold">Seu nome:</label>
-          <input type="text" className="p-2 block shadow bg-blue-100 m-2 rounded"/>
+          <input type="text"  onChange={onChange} name='Nome' value={Form.Nome} className="p-2 block shadow bg-blue-100 m-2 rounded"/>
 
           <label className="font-bold">Email:</label>
-          <input type="text" className="p-2 block shadow bg-blue-100 m-2 rounded"/>
+          <input type="text" onChange={onChange} name='Email' value={Form.Email}  className="p-2 block shadow bg-blue-100 m-2 rounded"/>
 
           <label className="font-bold">WhatsApp:</label>
-          <input type="text" className="p-2 block shadow bg-blue-100 m-2 rounded"/>
+          <input type="text" onChange={onChange} name='WhatsApp' value={Form.WhatsApp}  className="p-2 block shadow bg-blue-100 m-2 rounded"/>
 
           <label className="font-bold">Sua crítica ou sugestão:</label>
           <input type="text" className="p-2 block shadow bg-blue-100 m-2 rounded"/>
