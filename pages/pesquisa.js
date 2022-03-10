@@ -43,6 +43,11 @@ const Pesquisa = () => {
             Enviar crítica ou sugestão  
           </button>
         </form>
+
+        <p className="my-12">
+          Mensagem do desconto aqui....
+        </p>
+        
       </main>
     </>
   )
