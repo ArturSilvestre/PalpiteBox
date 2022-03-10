@@ -30,7 +30,6 @@ export default async(req, res) => {
       Promo = textCell.value
     }
 
-    // Nome	Email	WhatsApp	Cupom	Promo
     await sheet.addRow({
       Nome: data.Nome,
       Email: data.Email,
@@ -40,7 +39,11 @@ export default async(req, res) => {
       Cupom,
       Promo
     });
-    res.end(req.body)
+    res.end(JSON.stringify({
+      showCoupon: Cupom !== '',
+      Cupom,
+      Promo
+    }))
   } catch (err) {
     console.log(err);
     res.end('error')
