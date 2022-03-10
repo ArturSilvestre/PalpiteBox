@@ -1,5 +1,41 @@
+import { GoogleSpreadsheet } from 'google-spreadsheet';
+import credentials from '../../credentials.json';
+
+const doc = new GoogleSpreadsheet('10aE7nPYACkXJAjyE37SxGIF4V7qafgTKAW0BBFPlub0');
 
 export default async(req, res) => {
-  console.log(JSON.parse(req.body))
-  res.end(req.body)
+  try {
+    await doc.useServiceAccountAuth(credentials)
+    await doc.loadInfo()
+
+    const sheet = doc.sheetsByIndex[1]
+    const data = JSON.parse(req.body)
+
+    const sheetConf = doc.sheetsByIndex[2]
+    await sheetConf.loadCells('A2:B2')
+
+    const mostrarPromocaoCell = sheetConf.getCell(1, 0)
+    const textCell = sheetConf.getCell(1, 1)
+
+    let Cupom = ''
+    let Promo = ''
+    if (mostrarPromocaoCell.value === 'verdadeiro') {
+      Cupom = 'temporario'
+      Promo = textCell.value
+    }
+
+    // Nome	Email	WhatsApp	Cupom	Promo
+    await sheet.addRow({
+      Nome: data.Nome,
+      Email: data.Email,
+      WhatsApp: data.WhatsApp,
+      'Data Preenchimento': new Date(),
+      Cupom,
+      Promo
+    });
+    res.end(req.body)
+  } catch (err) {
+    console.log(err);
+    res.end('error')
+  }
 }
