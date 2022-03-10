@@ -1,4 +1,5 @@
 import { GoogleSpreadsheet } from 'google-spreadsheet';
+import moment from 'moment';
 import credentials from '../../credentials.json';
 
 const doc = new GoogleSpreadsheet('10aE7nPYACkXJAjyE37SxGIF4V7qafgTKAW0BBFPlub0');
@@ -29,7 +30,8 @@ export default async(req, res) => {
       Nome: data.Nome,
       Email: data.Email,
       WhatsApp: data.WhatsApp,
-      'Data Preenchimento': new Date(),
+      Nota: 5,
+      'Data Preenchimento': moment().format('DD/MM/YYYY, HH:mm:ss'),
       Cupom,
       Promo
     });
