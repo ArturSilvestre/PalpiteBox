@@ -1,0 +1,22 @@
+{
+  "name": "palpite-box",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "start": "next start",
+    "build": "next build"
+  },
+  "keywords": [],
+  "author": "Artur Silvestre de Oliveira",
+  "license": "MIT",
+  "dependencies": {
+    "autoprefixer": "^9.8.8",
+    "next": "^12.1.0",
+    "postcss-import": "^14.0.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "tailwindcss": "^1.9.0"
+  }
+}
