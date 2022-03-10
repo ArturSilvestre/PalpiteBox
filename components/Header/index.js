@@ -21,9 +21,6 @@ const Header = () => {
         <Link href='/contato'>
           <a className="hover:underline">Contato</a>
         </Link>
-        <Link href='/pesquisa'>
-          <a className="hover:underline">Pesquisa</a>
-        </Link>
       </div>
     </>
   )
