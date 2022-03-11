@@ -12,8 +12,8 @@
  ![Preview](https://github.com/tuliofaria/palpite-box/blob/master/print.png?raw=true)
 
  # Como rodar o aplicativo.
-  * Clone this repositóry $ git clone
-  * access directory $ cd
+  * Clone this repositóry $ git clone https://github.com/ArturSilvestre/PalpiteBox.git
+  * access directory $ cd PalpiteBox
   * Install all dependencies $ npm i
   * Run the aplication $ npm run dev
   * Caso queira criar uma nova Planilha no Google Drive pode alterar as Variaveis locais
