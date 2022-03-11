@@ -12,11 +12,11 @@
  ![Preview](https://github.com/tuliofaria/palpite-box/blob/master/print.png?raw=true)
 
  # Como rodar o aplicativo.
-  -> Clone this repositóry $ git clone
-  -> access directory $ cd
-  -> Install all dependencies $ npm i
-  -> Run the aplication $ npm run dev
-  -> Caso queira criar uma nova Planilha no Google Drive pode alterar as Variaveis locais
+  * Clone this repositóry $ git clone
+  * access directory $ cd
+  * Install all dependencies $ npm i
+  * Run the aplication $ npm run dev
+  * Caso queira criar uma nova Planilha no Google Drive pode alterar as Variaveis locais
     ```
       SHEET_CLIENT_EMAIL=client email do service credential
       SHEET_PRIVATE_KEY=private key do service credential - lembrar de substituir \n por quebras de linha e de codificar em base 64
