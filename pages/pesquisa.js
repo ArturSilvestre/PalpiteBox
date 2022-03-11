@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import Head from 'next/head';
+import PageTitle from '../components/PageTitle';
 
 const Pesquisa = () => {
   const [form, setForm] = useState({
@@ -34,6 +36,7 @@ const Pesquisa = () => {
   }
   return (
     <div className='pt-6 flex flex-col justify-center items-center'>
+      <PageTitle title="Pesquisa" />
       <h1 className='text-center font-bold my-4 text-2xl'>Críticas e sugestões</h1>
       <p> O restaurante X sempre busca por atender melhor seus clientes.</p>
       <p>Por isso, estamos sempre abertos a ouvir a sua opinião.</p>

@@ -1,10 +1,10 @@
 import React from 'react';
-import Link from 'next/link';
+import PageTitle from '../components/PageTitle';
 
 const Contato = () => {
   return (
     <>
-      <h1>Contato</h1>
+      <PageTitle title="Contato" />
       <div>
         <h3>What is Lorem Ipsum?</h3>
         <p>

@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import useSWR from 'swr';
+import PageTitle from '../components/PageTitle';
 
 const fetcher = (...args) => fetch(...args).then( res => res.json())
 
@@ -9,6 +10,7 @@ const Index = () => {
   return (
     <>
       <main className='conatiner flex flex-col justify-center items-center p-24'>
+        <PageTitle title="Home" />
         <p className='mb-10'>
           O restaurante X sempre busca atender melhor seus clientes. <br />
           Por isso, estamos sempre abertos a ouvir a sua opiniao. 
