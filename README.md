@@ -8,10 +8,10 @@
   Projeto com uma versão online que pode ser visualizado em: https://palpite-box-azure.vercel.app
   Caso visualizar dados enviados pode acessar a Planilha em: https://docs.google.com/spreadsheets/d/10aE7nPYACkXJAjyE37SxGIF4V7qafgTKAW0BBFPlub0/edit?usp=sharing
   
-  # Imagem do projeto.
+# Imagem do projeto.
  ![Preview](https://github.com/tuliofaria/palpite-box/blob/master/print.png?raw=true)
 
- # Como rodar o aplicativo.
+# Como rodar o aplicativo.
   * Clone this repositóry $ git clone https://github.com/ArturSilvestre/PalpiteBox.git
   * access directory $ cd PalpiteBox
   * Install all dependencies $ npm i
@@ -22,7 +22,6 @@
       SHEET_PRIVATE_KEY=private key do service credential - lembrar de substituir \n por quebras de linha e de codificar em base 64
       SHEET_DOC_ID=id da planilha
     ```
-
 # Construido com.
   * [NextJS](https://nextjs.org/) - The React Framework.
   * [TailwindCSS](https://tailwindcss.com/) - A utility-first CSS framework for rapidly building custom designs.
