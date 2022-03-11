@@ -4,9 +4,9 @@ import PageTitle from '../components/PageTitle';
 const Sobre = () => {
   return (
     <>
-      <div>
       <PageTitle title="Sobre" />
-      <h3>What is Lorem Ipsum?</h3>
+      <main className='conatiner flex flex-col justify-center items-center p-24'>
+        <h3 className='text-center font-bold my-4 text-2xl'>What is Lorem Ipsum?</h3>
         <p>
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
         Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a 
@@ -15,10 +15,9 @@ const Sobre = () => {
         It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
         and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
         </p>
-      </div>
+      </main>
     </>
   )
-
 }
 
 export default Sobre;
