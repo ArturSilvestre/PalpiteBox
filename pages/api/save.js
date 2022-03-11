@@ -34,7 +34,8 @@ export default async(req, res) => {
       Nome: data.Nome,
       Email: data.Email,
       WhatsApp: data.WhatsApp,
-      Nota: 5,
+      Critica: data.Critica,
+      Nota: data.Nota,
       'Data Preenchimento': moment().format('DD/MM/YYYY, HH:mm:ss'),
       Cupom,
       Promo
