@@ -1,8 +1,7 @@
 import { GoogleSpreadsheet } from 'google-spreadsheet';
 import moment from 'moment';
-import credentials from '../../credentials.json';
 
-const doc = new GoogleSpreadsheet('10aE7nPYACkXJAjyE37SxGIF4V7qafgTKAW0BBFPlub0');
+const doc = new GoogleSpreadsheet(process.env.SHEET_DOC_ID);
 
 const genCupom = () => {
   const code = parseInt(moment().format('YYMMDDHHmmssSSS')).toString(16).toUpperCase();
@@ -11,7 +10,10 @@ const genCupom = () => {
 
 export default async(req, res) => {
   try {
-    await doc.useServiceAccountAuth(credentials)
+    await doc.useServiceAccountAuth({
+      client_email: process.env.SHEET_CLIENT_EMAIL,
+      private_key: process.env.SHEET_PRIVATE_KEY
+    })
     await doc.loadInfo()
 
     const sheet = doc.sheetsByIndex[1]
